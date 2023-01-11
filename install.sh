@@ -1,13 +1,10 @@
 #!/bin/bash
 u="$USER"
 sudo apt update
-yes | sudo apt install openssh-server
-sudo ufw allow ssh
 yes | sudo apt install git
 sudo git clone https://www.github.com/forci0ne/Qiner.git /home/$u/Qiner
 yes | sudo apt install screen
 yes | sudo apt install htop
-yes | sudo apt install net-tools
 yes | sudo apt install g++
 sleep 2
 /usr/bin/g++ -Wall -march=native -Ofast -funroll-loops -pthread /home/$u/Qiner/QinerLinux.cpp -o /home/$u/Qiner/Qiner
