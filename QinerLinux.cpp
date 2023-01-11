@@ -8,7 +8,7 @@ out of or in connection with the software or the use or other dealings in the so
 */
 
 #define AVX512 0
-#define NUMBER_OF_NEURONS 200000
+#define NUMBER_OF_NEURONS 20000
 #define PORT 21841
 #define SOLUTION_THRESHOLD 28
 #define VERSION_A 1
