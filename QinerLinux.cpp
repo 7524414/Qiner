@@ -8,11 +8,11 @@ out of or in connection with the software or the use or other dealings in the so
 */
 
 #define AVX512 0
-#define NUMBER_OF_NEURONS 65536
+#define NUMBER_OF_NEURONS 200000
 #define PORT 21841
-#define SOLUTION_THRESHOLD 29
+#define SOLUTION_THRESHOLD 28
 #define VERSION_A 1
-#define VERSION_B 77
+#define VERSION_B 80
 #define VERSION_C 0
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -1369,7 +1369,7 @@ void *miningThreadProc(void *ptr)
 #endif
 {
     unsigned char nonce[32];
-    unsigned short neuronLinks[NUMBER_OF_NEURONS][2];
+    unsigned int neuronLinks[NUMBER_OF_NEURONS][2];
     unsigned char neuronValues[NUMBER_OF_NEURONS];
     while (!state)
     {
@@ -1384,11 +1384,11 @@ void *miningThreadProc(void *ptr)
             _rdrand64_step((unsigned long long*)&nonce[16]);
             _rdrand64_step((unsigned long long*)&nonce[24]);
             random(minerPublicKey, nonce, (unsigned char*)neuronLinks, sizeof(neuronLinks));
-            /*for (unsigned int i = 0; i < NUMBER_OF_NEURONS; i++)
+            for (unsigned int i = 0; i < NUMBER_OF_NEURONS; i++)
             {
                 neuronLinks[i][0] %= NUMBER_OF_NEURONS;
                 neuronLinks[i][1] %= NUMBER_OF_NEURONS;
-            }*/
+            }
             memset(neuronValues, 0xFF, sizeof(neuronValues));
 
             unsigned int limiter = sizeof(miningData) / sizeof(miningData[0]);
@@ -1526,13 +1526,13 @@ int main(int argc, char* argv[])
 		#endif
 
         randomSeed[0] = 128;
-        randomSeed[1] = 80;
+        randomSeed[1] = 87;
         randomSeed[2] = 115;
-        randomSeed[3] = 130;
+        randomSeed[3] = 131;
         randomSeed[4] = 112;
-        randomSeed[5] = 88;
+        randomSeed[5] = 86;
         randomSeed[6] = 16;
-        randomSeed[7] = 112;
+        randomSeed[7] = 111;
 
         random(randomSeed, randomSeed, (unsigned char*)miningData, sizeof(miningData));
 
