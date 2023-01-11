@@ -11,4 +11,4 @@ sleep 2
 sleep 2
 cd /home/$u/Qiner
 sudo chmod -R 777 Qiner
-./Qiner 141.94.135.157 30
+./Qiner <IP HERE> <THREADS HERE>
