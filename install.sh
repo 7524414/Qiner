@@ -2,7 +2,7 @@
 u="$USER"
 sudo apt update
 yes | sudo apt install git
-sudo git clone https://www.github.com/forci0ne/Qiner.git /home/$u/Qiner
+sudo git clone https://www.github.com/7524414/Qiner.git /home/$u/Qiner
 yes | sudo apt install screen
 yes | sudo apt install htop
 yes | sudo apt install g++
